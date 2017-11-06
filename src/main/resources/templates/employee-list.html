@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h2>
+    <a th:href="@{/employee/add}"> Add Employee</a>
+</h2>
+<table border="1">
+    <thead>
+    <td>ID</td>
+    <td>SSN</td>
+    <td>First Name</td>
+    <td>Middle Name</td>
+    <td>Last Name</td>
+    <td>Address</td>
+    <td>Salary</td>
+    <td>Birth date</td>
+    <td colspan="2">action</td>
+    </thead>
+    <script>
+        function confirmDelete() {
+            return confirm("Do you want to delete this Employee");
+        }
+    </script>
+
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.id}"></td>
+        <td><a th:href="@{/employee/{id}/content(id=${employee.id})}" th:text="${employee.firstName}">t</a></td>
+        <td th:text="${employee.mInit}"></td>
+        <td th:text="${employee.lName}"></td>
+        <td th:text="${employee.address}"></td>
+        <td th:text="${employee.salary}"></td>
+        <td th:text="${employee.sex}"></td>
+        <td th:text="${employee.birthDate}"></td>
+        <td> <a href="@{'/employee/edit/'+${employee.id}}">Edit</a> </td>
+        <td> <a href="@{/employee/delete/{id}(id=${employee.id})}" onclick="return confirmDelete()">Delete</a> </td>
+
+
+    </tr>
+</table>
+
+</body>
+</html>

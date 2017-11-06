@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+
+<form th:action="@{/dependent/add}" th:object="${dependent}" method="post">
+
+    <input type="hidden" th:field="*{id}"/>
+    name: <input type="text" th:field="*{name}"/> <br/>
+    sex: <input type="text" th:field="*{sex}"/> <br/>
+    birthDate: <input type="date" th:field="*{birthDate}"/> <br/>
+    relationShip: <input type="text" th:field="*{relationShip}"/> <br/>
+    <input type="submit" value="save"/>
+</form>
+
+</body>
+</html>
