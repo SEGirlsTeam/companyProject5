@@ -29,8 +29,8 @@
         <td th:text="${department.number}"></td>
         <td th:text="${department.location}"></td>
 
-        <td> <a href="@{'/department/edit/'+${department.id}}">Edit</a> </td>
-        <td> <a href="@{/department/delete/{id}(id=${department.id})}" onclick="return confirmDelete()">Delete</a> </td>
+        <td> <a th:href="@{'/department/edit/'+${department.id}}">Edit</a> </td>
+        <td> <a th:href="@{/department/delete/{id}(id=${department.id})}" onclick="return confirmDelete()">Delete</a> </td>
 
 
     </tr>

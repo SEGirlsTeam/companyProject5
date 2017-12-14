@@ -112,6 +112,7 @@ public class Employee {
     public void setDependents(Set<Dependent> dependents) {
         this.dependents = dependents;
     }
+
     @ManyToMany(mappedBy = "employees")
     public Set<Project> getProjects() {
         return projects;

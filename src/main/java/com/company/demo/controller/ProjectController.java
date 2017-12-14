@@ -1,5 +1,7 @@
 package com.company.demo.controller;
+import com.company.demo.model.Employee;
 import com.company.demo.model.Project;
+import com.company.demo.service.EmployeeService;
 import com.company.demo.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,8 @@ import java.util.List;
 public class ProjectController {
     @Autowired
     private ProjectService projectService;
+    @Autowired
+    private EmployeeService employeeService;
 
     @GetMapping("/project/add")
     public  String renderAddProjecttPage(Model model){

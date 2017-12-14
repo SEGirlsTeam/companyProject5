@@ -6,5 +6,19 @@
 </head>
 <body>
 <h2>Show content for employee id<span th:text="${employeeId}"></span></h2>
+<h3><a th:href="@{/employee/{id}/set-project(id=${employeeId})}">Set Projects</a></h3>
+
+<h3>Projects</h3>
+<table border="1">
+    <thead>
+    <th>Project Id</th>
+    <th>Project name</th>
+    </thead>
+    <tr th:each="project: ${projects}">
+        <td th:test="${project.id}"></td>
+        <td th:test="${project.name}"></td>
+    </tr>
+
+</table>
 </body>
 </html>

@@ -29,8 +29,8 @@
         <td th:text="${dependent.sex}"></td>
         <td th:text="${dependent.birthDate}"></td>
         <td th:text="${dependent.relationShip}"></td>
-        <td> <a href="@{'/dependent/edit/'+${dependent.id}}">Edit</a> </td>
-        <td> <a href="@{/dependent/delete/{id}(id=${dependent.id})}" onclick="return confirmDelete()">Delete</a> </td>
+        <td> <a th:href="@{'/dependent/edit/'+${dependent.id}}">Edit</a> </td>
+        <td> <a th:href="@{/dependent/delete/{id}(id=${dependent.id})}" onclick="return confirmDelete()">Delete</a> </td>
 
 
     </tr>

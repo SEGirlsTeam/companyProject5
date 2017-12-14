@@ -58,6 +58,7 @@ public class Project {
     public void setDepartment(Department department) {
         this.department = department;
     }
+
     @ManyToMany
     @JoinTable(name = "projects_employees",joinColumns=@JoinColumn(name = "project_id"),
             inverseJoinColumns = @JoinColumn(name = "employee_Id"))
